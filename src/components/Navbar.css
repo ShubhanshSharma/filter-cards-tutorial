@@ -1,0 +1,28 @@
+.nav{
+    height: 70px;
+    width: 100vw;
+    display: flex;
+    background-color: rgb(34, 34, 77);
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.header{
+    height: fit-content;
+    width: fit-content;
+    color: white;
+    font-size: 34px;
+    font-weight: 800;
+    background-color: rgba(255, 140, 0, 0);
+    margin: 0px;
+    padding: 4px;
+    border-radius: 10px;
+    transition: all 0.5s;
+    cursor: default;
+}
+
+.header:hover{
+    background-color: rgba(255, 140, 0);
+}
