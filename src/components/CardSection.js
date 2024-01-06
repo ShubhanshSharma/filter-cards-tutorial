@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "./Card";
 import './CardSection.css';
 
-const CardSection = ({courses}) => {
+const CardSection = ({courses}, category) => {
     
     let coursesArray = []; //returns data of all courses of different category
 
-    
+    const [likedCourses, setLikedCourses] = useState([]);
 
     const getCourses = () => {
         console.log({courses});
@@ -23,10 +23,11 @@ const CardSection = ({courses}) => {
             {
                 (courses!==null)?
                 getCourses().map( (course) =>{
-                    return(<Card course={course}/>)
-                }):
-                 <div className="loader">
-                 </div>
+                    return(<Card course={course} 
+                            likedCourses={likedCourses} 
+                            setLikedCourses={setLikedCourses}/>)
+                })
+                :<div className="loader"></div>
             }
         </div>
     )

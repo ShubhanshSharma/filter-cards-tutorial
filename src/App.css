@@ -1,3 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color:rgb(138, 136, 171) ;
+  overflow-y: hidden;
 }

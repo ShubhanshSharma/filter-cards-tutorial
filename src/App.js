@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 const App = () => {
 
   const [courses, setCourses] = useState(null);
+  const [category , setCategory] = useState(filterData[0].title);
   
   useEffect( () =>{
     const info = async() => {
@@ -34,8 +35,10 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
-      <Filter filterData={filterData}/>
-      <CardSection courses={courses}/>
+      <Filter className="filters" filterData={filterData} 
+        category={category}
+        setCategory={setCategory}/>
+      <CardSection courses={courses} category={category}/>
     </div>
     
   );

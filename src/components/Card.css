@@ -5,33 +5,42 @@
     position: relative;
     flex-direction: column;
     background-color:dimgrey;
+    border-radius: 10px;
 }
 
 img{
     width: 298px;
-    
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
-button{
+.like{
+    width: 20px;
+    height: 20px;
     position: absolute;
     border: none;
-    border-radius: 100%;
+    border-radius: 40px;
     z-index: 3;
     right: 17px;
     top: 157px;
     scale: 1.4;
+    padding: 0%;
+}
+
+.likeSVG{
+    padding: 3px 0px 0px 0px;
 }
 
 .head{
     color: white;
-    font-size: x-large;
+    font-size: 20px;
     font-weight: 700;
     text-align: left;
     padding: 0 12px;
 }
 
 .desc{
-    text-overflow: ellipsis;
+    font-size: large;
     text-align: left;
     padding: 0 10px ;
     color: white;
