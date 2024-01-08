@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import './Filter.css';
 
-const Filter = (filter, category, setCategory) => {
 
-    // const setCourses =props.setCourses;
-    // const courses = props.courses;
-    // const filter = props.filterData;
+const Filter = (props) => {
+
+    const setCategory =props.setCategory;
+    const filter = props.filterData;
+    const category = props.category;
 
     // const [] = useState([]);
     // function filterHandler(event){
@@ -16,11 +17,14 @@ const Filter = (filter, category, setCategory) => {
         setCategory(title);
     }
 
-    console.log('data of filters'); 
-    console.log(filter.filterData);
+    console.log(filter);
     return (<div className='filters'>
-        {filter.filterData.map( (data) =>{
-            return (<button onClick={() => filterHandler(data.title)}>{data.title}</button>);
+        {filter.map( (data) =>{
+            return (<button className={` text-white bg-[#22224d] p-2 rounded-md
+                      ${ category===data.title ? "border-[3px] border-sky-500 " : "" } `} 
+                
+                
+                onClick={() => filterHandler(data.title)}>{data.title}</button>);
         })}
     </div>
     )

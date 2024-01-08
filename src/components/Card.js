@@ -1,5 +1,5 @@
 import React from "react";
-import { FcLike } from "react-icons/fc";
+import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 import './Card.css';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -40,7 +40,11 @@ const Card = (props) =>{//{course},likedCourses,setLikedCourses
 
             <div>
                 <button className="like" onClick={likeHandler}>
-                    <FcLike className="likeSVG"/>
+                    {
+                        likedCourses.includes(course.id)? 
+                        <FcLikePlaceholder />:
+                        <FcLike className="likeSVG"/>
+                    }
                 </button>
             </div>
             

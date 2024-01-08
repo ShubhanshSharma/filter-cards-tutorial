@@ -2,20 +2,29 @@ import React, { useState } from "react";
 import Card from "./Card";
 import './CardSection.css';
 
-const CardSection = ({courses}, category) => {
-    
+const CardSection = (props) => {
+    const courses = props.courses;
+    const category = props.category;
     let coursesArray = []; //returns data of all courses of different category
 
+    console.log(category);
     const [likedCourses, setLikedCourses] = useState([]);
 
     const getCourses = () => {
         console.log({courses});
-        Object.values(courses).forEach((courseType) => {
-            courseType.forEach((course) => {
-                coursesArray.push(course);
+        if(category=="All"){
+            Object.values(courses).forEach((element) => {
+                element.forEach((element) => {
+                    coursesArray.push(element);
+                });
             });
-        });
-        return coursesArray;
+            return coursesArray;
+        }
+
+        else{
+            console.log(courses[category])
+           return courses[category];
+        }
     }
 
     return(

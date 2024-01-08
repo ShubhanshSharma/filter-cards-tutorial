@@ -11,6 +11,7 @@ const App = () => {
 
   const [courses, setCourses] = useState(null);
   const [category , setCategory] = useState(filterData[0].title);
+  console.log('category is: ' + category);
   
   useEffect( () =>{
     const info = async() => {
@@ -34,11 +35,10 @@ const App = () => {
 
   return (
     <div className="App">
-      <Navbar />
-      <Filter className="filters" filterData={filterData} 
-        category={category}
+      <Navbar className={``}/>
+      <Filter className="filters" filterData={filterData} category={category}
         setCategory={setCategory}/>
-      <CardSection courses={courses} category={category}/>
+      <CardSection courses={courses} category={category}  />
     </div>
     
   );
